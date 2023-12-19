@@ -3,7 +3,7 @@ function randomPassword()
 {
     $password = $_GET["password"];
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!.,$%&/()&/';
-    $pass = array();
+    $pass = [];
     $charactersLength = strlen($characters) - 1;
     for ($i = 0; $i < $password; $i++) {
         $character = rand(1, $charactersLength);
