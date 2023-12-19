@@ -1,17 +1,4 @@
-<?php
-function randomPassword()
-{
-    $password = $_GET["password"];
-    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!.,$%&/()&/';
-    $pass = array();
-    $charactersLength = strlen($characters) - 1;
-    for ($i = 0; $i < $password; $i++) {
-        $letters = rand(1, $charactersLength);
-        $pass[] = $characters[$letters];
-    }
-    return implode($pass);
-}
-?>
+<?php include __DIR__ . "/functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +10,7 @@ function randomPassword()
 </head>
 
 <body class="p-5">
-    <? echo "<h1>" . randomPassword() . "</h1>"; ?> <br>
+    <?php echo "<h1>" . randomPassword() . "</h1>"; ?> <br>
     <button onclick='window.location.reload(true);'>Genera nuova password</button>
     <br>
     <a href="form.php">Imposta nuova password</a>
