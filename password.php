@@ -1,5 +1,29 @@
 <?php
-$password = $_GET["password"];
+
+// function randomPassword($number)
+// {
+
+//     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+//     $pass = [];
+//     $alphaLength = strlen($alphabet) - 1;
+//     for ($i = 0; $i == $number; $i++) {
+//         $n = rand(1, $alphaLength);
+//         $pass[] = $alphabet[$n];
+//     }
+//     return implode($pass);
+// }
+function randomPassword()
+{
+    $password = $_GET["password"];
+    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!.,$%&/()&/';
+    $pass = array(); //remember to declare $pass as an array
+    $charactersLength = strlen($characters) - 1; //put the length -1 in cache
+    for ($i = 0; $i < $password; $i++) {
+        $letters = rand(1, $charactersLength);
+        $pass[] = $characters[$letters];
+    }
+    return implode($pass); //turn the array into a string
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +36,10 @@ $password = $_GET["password"];
 </head>
 
 <body class="p-5">
-    <?php echo $password; ?> <br>
-    <a href="form.php">Genera nuova password</a>
+    <? echo "<h1>" . randomPassword() . "</h1>"; ?> <br>
+    <button onclick='window.location.reload(true);'>Genera nuova password</button>
+    <br>
+    <a href="form.php">Imposta nuova password</a>
 </body>
 
 </html>
