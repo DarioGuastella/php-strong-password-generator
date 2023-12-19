@@ -11,9 +11,9 @@
 
 <body class="p-5">
     <?php echo "<h1>" . randomPassword() . "</h1>"; ?> <br>
-    <button onclick='window.location.reload(true);'>Genera nuova password</button>
+    <button class="btn btn-primary" onclick='window.location.reload(true);'>Genera nuova password</button>
     <br>
-    <a href="form.php">Imposta nuova password</a>
+    <a class="btn btn-primary mt-3" href="form.php">Imposta nuova password</a>
 </body>
 
 </html>
