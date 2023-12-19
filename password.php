@@ -1,28 +1,15 @@
 <?php
-
-// function randomPassword($number)
-// {
-
-//     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-//     $pass = [];
-//     $alphaLength = strlen($alphabet) - 1;
-//     for ($i = 0; $i == $number; $i++) {
-//         $n = rand(1, $alphaLength);
-//         $pass[] = $alphabet[$n];
-//     }
-//     return implode($pass);
-// }
 function randomPassword()
 {
     $password = $_GET["password"];
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!.,$%&/()&/';
-    $pass = array(); //remember to declare $pass as an array
-    $charactersLength = strlen($characters) - 1; //put the length -1 in cache
+    $pass = array();
+    $charactersLength = strlen($characters) - 1;
     for ($i = 0; $i < $password; $i++) {
         $letters = rand(1, $charactersLength);
         $pass[] = $characters[$letters];
     }
-    return implode($pass); //turn the array into a string
+    return implode($pass);
 }
 ?>
 <!DOCTYPE html>
