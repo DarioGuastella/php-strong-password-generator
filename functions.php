@@ -6,8 +6,8 @@ function randomPassword()
     $pass = [];
     $charactersLength = strlen($characters) - 1;
     for ($i = 0; $i < $password; $i++) {
-        $character = rand(1, $charactersLength);
-        $pass[] = $characters[$character];
+        $num = rand(1, $charactersLength);
+        $pass[] = $characters[$num];
     }
     return implode($pass);
 }
